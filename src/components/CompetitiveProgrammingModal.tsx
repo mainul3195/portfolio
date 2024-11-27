@@ -1,120 +1,122 @@
 'use client';
-
-import { motion, AnimatePresence } from 'framer-motion';
-import { IoClose } from 'react-icons/io5';
-import { FaLaptopCode } from 'react-icons/fa';
+import { Dialog, Transition } from '@headlessui/react';
+import { Fragment } from 'react';
+import { FaLaptopCode, FaTrophy, FaCode, FaMedal } from 'react-icons/fa';
 
 interface CompetitiveProgrammingModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
-export default function CompetitiveProgrammingModal({
-  isOpen,
-  onClose
-}: CompetitiveProgrammingModalProps) {
-  if (!isOpen) return null;
-
-  const achievements = {
-    general: [
-      'Solved more than 2500 problems in different online judges.',
-      'Participated in nine Inter University Programming Contests (RUET, SUST(2), AUST, CUET, SEC, CoU, BUET)',
-      'Participated in ICPC Dhaka Regional 2020, 2021, and 2023',
-      'Participated in 2023 ICPC Asia West Continent Final Contest',
-      'Participated in National Collegiate Programming Contest 2023',
-      'Participated in SRBD Code Contest 2023 final round (Top 50)'
-    ],
-    special: [
-      '6th in CoU-BRACNet Inter University Programming Contest 2023',
-      '2nd Runner Up at Sylhet Bondhushova Programming Contest hosted by Leading University',
-      'Officially 15th at ICPC Dhaka Regional 2023',
-      '11th in SEC Junior Programming Contest',
-      '21th in NCPC 2023'
-    ]
-  };
-
+export default function CompetitiveProgrammingModal({ isOpen, onClose }: CompetitiveProgrammingModalProps) {
   return (
-    <AnimatePresence>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-        onClick={onClose}
-      >
-        <motion.div
-          initial={{ scale: 0.95, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          exit={{ scale: 0.95, opacity: 0 }}
-          onClick={(e) => e.stopPropagation()}
-          className="bg-slate-900 border border-slate-800 rounded-xl p-6 md:p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-xl"
+    <Transition appear show={isOpen} as={Fragment}>
+      <Dialog as="div" className="relative z-50" onClose={onClose}>
+        <Transition.Child
+          as={Fragment}
+          enter="ease-out duration-300"
+          enterFrom="opacity-0"
+          enterTo="opacity-100"
+          leave="ease-in duration-200"
+          leaveFrom="opacity-100"
+          leaveTo="opacity-0"
         >
-          <div className="flex justify-between items-center mb-6">
-            <div className="flex items-center gap-3">
-              <FaLaptopCode className="w-6 h-6 text-blue-400" />
-              <h2 className="text-2xl md:text-3xl font-bold text-slate-100">
-                Competitive Programming
-              </h2>
-            </div>
-            <button
-              onClick={onClose}
-              className="text-slate-400 hover:text-slate-100 transition-colors"
-            >
-              <IoClose className="w-6 h-6" />
-            </button>
-          </div>
+          <div className="fixed inset-0 bg-black/25 backdrop-blur-sm" />
+        </Transition.Child>
 
-          <div className="space-y-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
+        <div className="fixed inset-0 overflow-y-auto">
+          <div className="flex min-h-full items-center justify-center p-4 text-center">
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0 scale-95"
+              enterTo="opacity-100 scale-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100 scale-100"
+              leaveTo="opacity-0 scale-95"
             >
-              <h3 className="text-lg font-semibold text-slate-200 mb-4">
-                Achievements & Participations
-              </h3>
-              <ul className="space-y-3">
-                {achievements.general.map((achievement, index) => (
-                  <motion.li
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.2 + index * 0.1 }}
-                    className="flex items-start text-slate-300"
-                  >
-                    <span className="text-blue-400 mr-2">•</span>
-                    <span>{achievement}</span>
-                  </motion.li>
-                ))}
-              </ul>
-            </motion.div>
+              <Dialog.Panel className="w-full max-w-3xl transform overflow-hidden rounded-2xl bg-slate-900/90 backdrop-blur-sm p-6 text-left align-middle shadow-xl transition-all border border-slate-800">
+                <div className="flex items-center justify-between mb-8">
+                  <div className="flex items-center space-x-4">
+                    <div className="p-2 bg-gradient-to-r from-blue-500/10 to-indigo-500/10 rounded-lg">
+                      <FaLaptopCode className="w-8 h-8 text-blue-300" />
+                    </div>
+                    <Dialog.Title as="h3" className="text-3xl font-bold text-white/90">
+                      Competitive Programming
+                    </Dialog.Title>
+                  </div>
+                </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-            >
-              <h3 className="text-lg font-semibold text-slate-200 mb-4">
-                Special Mention
-              </h3>
-              <ul className="space-y-3">
-                {achievements.special.map((achievement, index) => (
-                  <motion.li
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.4 + index * 0.1 }}
-                    className="flex items-start text-slate-300"
+                <div className="bg-slate-800/30 rounded-xl p-6 backdrop-blur-sm border border-slate-700/50">
+                  <div className="space-y-8">
+                    {/* Overview Section */}
+                    <div className="flex items-start space-x-4">
+                      <div className="p-2 bg-blue-500/10 rounded-lg mt-1">
+                        <FaCode className="w-5 h-5 text-blue-300/80" />
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-semibold text-blue-300/90 mb-3">Overview</h4>
+                        <ul className="list-none space-y-2">
+                          <li className="text-slate-300">
+                            Solved more than 2500 problems in different online judges
+                          </li>
+                          <li className="text-slate-300">
+                            Expert (max 1815) in Codeforces
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    {/* Participations Section */}
+                    <div className="flex items-start space-x-4">
+                      <div className="p-2 bg-blue-500/10 rounded-lg mt-1">
+                        <FaMedal className="w-5 h-5 text-blue-300/80" />
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-semibold text-blue-300/90 mb-3">Participations</h4>
+                        <ul className="list-none space-y-2">
+                          <li className="text-slate-300">Nine Inter University Programming Contests</li>
+                          <li className="text-slate-300">ICPC Dhaka Regional 2020, 2021, and 2023</li>
+                          <li className="text-slate-300">2023 ICPC Asia West Continent Final Contest</li>
+                          <li className="text-slate-300">National Collegiate Programming Contest 2023</li>
+                          <li className="text-slate-300">SRBD Code Contest 2023 final round (Top 50)</li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    {/* Special Mention Section */}
+                    <div className="flex items-start space-x-4">
+                      <div className="p-2 bg-blue-500/10 rounded-lg mt-1">
+                        <FaTrophy className="w-5 h-5 text-blue-300/80" />
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-semibold text-blue-300/90 mb-3">Special Mention</h4>
+                        <ul className="list-none space-y-2">
+                          <li className="text-slate-300">6th in CoU-BRACNet Inter University Programming Contest 2023</li>
+                          <li className="text-slate-300">2nd Runner Up at Sylhet Bondhushova Programming Contest hosted by Leading University</li>
+                          <li className="text-slate-300">Officially 15th at ICPC Dhaka Regional 2023</li>
+                          <li className="text-slate-300">11th in SEC Junior Programming Contest</li>
+                          <li className="text-slate-300">21th in NCPC 2023</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-8 flex justify-end">
+                  <button
+                    type="button"
+                    className="inline-flex justify-center rounded-md border border-transparent bg-blue-500/10 px-4 py-2 text-sm font-medium text-blue-300 hover:bg-blue-500/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 transition-all duration-200"
+                    onClick={onClose}
                   >
-                    <span className="text-blue-400 mr-2">•</span>
-                    <span>{achievement}</span>
-                  </motion.li>
-                ))}
-              </ul>
-            </motion.div>
+                    Close
+                  </button>
+                </div>
+              </Dialog.Panel>
+            </Transition.Child>
           </div>
-        </motion.div>
-      </motion.div>
-    </AnimatePresence>
+        </div>
+      </Dialog>
+    </Transition>
   );
 }

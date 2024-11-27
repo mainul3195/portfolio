@@ -18,10 +18,7 @@ export const education: Education[] = [
     location: "Sylhet, Bangladesh",
     icon: FaUserGraduate,
     achievements: [
-      "CGPA 3.97/4.00 (up to 6th semester)",
-      "Merit Position: 3rd",
-      "Dean's List Award in all semesters",
-      "University Merit Scholarship"
+      "CGPA: Above 3.95 (Up to 6th Semester)"
     ]
   },
   {
@@ -32,8 +29,7 @@ export const education: Education[] = [
     icon: FaGraduationCap,
     achievements: [
       "GPA 5.00",
-      "Merit Scholarship",
-      "Position: Top 5% among 2000+ students"
+      "Board Merit Scholarship",
     ]
   },
   {
@@ -44,8 +40,6 @@ export const education: Education[] = [
     icon: FaGraduationCap,
     achievements: [
       "GPA 5.00",
-      "Board Merit Scholarship",
-      "Junior Scholarship"
     ]
   }
 ];
