@@ -39,7 +39,7 @@ export default function Home() {
     }
   };
 
-  const item = {
+  const itemVariant = {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0 }
   };
@@ -217,19 +217,21 @@ export default function Home() {
             whileInView="show"
             viewport={{ once: true }}
           >
-            {/* Cards */}
-            {achievements.map((item, index) => (
+            {achievements.map((achievement, index) => (
               <motion.div
                 key={index}
-                variants={item}
+                variants={itemVariant}
                 className="gradient-border p-6"
                 whileHover={{ y: -10, scale: 1.02 }}
+                style={{
+                  background: `linear-gradient(135deg, ${achievement.color})`
+                }}
               >
-                <div className={`rounded-xl p-4 bg-gradient-to-br ${item.color}`}>
-                  {item.icon}
+                <div className="flex flex-col items-center text-center">
+                  {achievement.icon}
+                  <h3 className="text-xl font-semibold mt-4">{achievement.title}</h3>
+                  <p className="text-gray-400 mt-2">{achievement.desc}</p>
                 </div>
-                <h3 className="text-xl font-semibold mt-4 text-white">{item.title}</h3>
-                <p className="text-gray-400 mt-2">{item.desc}</p>
               </motion.div>
             ))}
           </motion.div>
