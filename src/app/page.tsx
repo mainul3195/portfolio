@@ -15,7 +15,7 @@ import EducationModal from '@/components/EducationModal';
 import emailjs from '@emailjs/browser';
 
 // Initialize EmailJS
-emailjs.init('YOUR_PUBLIC_KEY'); // Replace with your public key
+emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '');
 
 export default function Home() {
   const [formData, setFormData] = useState({
@@ -231,15 +231,15 @@ export default function Home() {
 
     try {
       await emailjs.send(
-        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '',
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '',
         {
           from_name: formData.name,
           from_email: formData.email,
           subject: formData.subject,
           message: formData.message,
         },
-        'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ''
       );
       
       setStatus({ type: 'success', message: 'Message sent successfully!' });
