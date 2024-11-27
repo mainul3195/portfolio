@@ -45,4 +45,4 @@ npm run dev
 
 ## Deployment
 
-This website is deployed on Vercel. Any push to the main branch will trigger automatic deployment.
+This website is deployed on Vercel. Use the link mainul3195.vercel.app to access it. 
