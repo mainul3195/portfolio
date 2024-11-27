@@ -106,15 +106,15 @@ export default function AboutSection() {
               <p className="text-sm text-slate-400 italic mb-4">This is a booring paragraph, you should skip!</p>
               
               <p>
-                Because of my dad's job, I moved around a lot as a kid. But during my school years, I finally settled in Tangail. I finished high school at Bindubasini Govt Boys' High School, and then luck had me leave my family behind to move to Dhaka for Notre Dame College.
+                Because of my fathers's job, I moved around to different places in my childhood. But during my school years, I finally settled in Tangail. I finished high school at Bindubasini Govt Boys' High School, and then luck had me leave my family behind to move to Dhaka for Notre Dame College.
               </p>
 
               <p>
-                From my school days, I was always curious about technology. I was fascinated by how things worked around me. In college, I discovered programming and found it to be a lot of fun. After a particular incident, I decided to dive into programming. With my limited knowledge, I realized that Computer Science and Engineering (CSE) was the perfect blend of technology and programming. So, I set my sights on CSE.
+                From my school days, I was always curious about technology. I was fascinated by how things worked around me. In college, I discovered programming and found it to be a lot of fun. After a particular silly incident, I decided to dive into programming. With my limited knowledge, I realized that Computer Science and Engineering (CSE) was the perfect blend of technology and programming. So, I set my sights on CSE.
               </p>
 
               <p>
-                After many ups and downs, I ended up in Sylhet, a peaceful city, to study CSE. I don't know if I'll be successful in the eyes of society, but I'm willing to give it a shot. The rest is in the hands of Almighty Allah.
+                After many ups and downs, I ended up in Sylhet, a peaceful city, a city of greenery, leaving the hustle and bustle of Dhaka behind, to study CSE at SUST. I don't know if I'll be able to keep up with the pace, but I'm willing to give it a shot. The rest is in the hands of Almighty Allah.
               </p>
             </div>
           </div>
