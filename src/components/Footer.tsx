@@ -43,6 +43,13 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 py-12">
         <div className="flex flex-col items-center justify-center space-y-8">
           {/* Social Links */}
+          <motion.p
+            className="text-slate-300 text-lg font-medium"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+          >
+            Also find me on these platforms
+          </motion.p>
           <div className="flex flex-wrap justify-center gap-6">
             {socialLinks.map((link) => (
               <motion.a

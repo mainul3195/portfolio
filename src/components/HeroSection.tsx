@@ -33,7 +33,7 @@ export default function HeroSection() {
             transition={{ delay: 0.6, duration: 0.5 }}
             className="text-xl md:text-2xl text-slate-300 mb-8"
           >
-            Software Engineer & Problem Solver
+            A Technology Enthusiast & Problem Solver
           </motion.p>
           <motion.div 
             initial={{ opacity: 0 }}

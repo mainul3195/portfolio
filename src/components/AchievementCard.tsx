@@ -40,7 +40,7 @@ export default function AchievementCard({
         y: -15,
         transition: { duration: 0.2, ease: "easeOut" }
       }}
-      className={`group relative overflow-hidden rounded-xl backdrop-blur-[2px] ${color} border border-white/10 p-4 cursor-pointer transition-all duration-300 ${glow} hover:border-white/20 shadow-lg hover:shadow-xl`}
+      className={`group relative overflow-hidden rounded-xl backdrop-blur-[2px] ${color} border border-white/10 p-3 sm:p-4 cursor-pointer transition-all duration-300 ${glow} hover:border-white/20 shadow-lg hover:shadow-xl`}
       onClick={() => onOpenModal(modalType)}
     >
       {/* Glass Effect Overlay */}
@@ -48,13 +48,20 @@ export default function AchievementCard({
       
       {/* Content */}
       <motion.div 
-        className="relative z-10 flex flex-col items-center justify-center gap-4"
+        className="relative z-10 flex flex-col items-center justify-center gap-2 sm:gap-4"
         initial={{ y: 0 }}
         whileHover={{ y: -5 }}
         transition={{ duration: 0.2 }}
       >
-        {icon}
-        <h3 className="text-xl font-semibold text-white/80 text-center">{title}</h3>
+        {/* Icon */}
+        <div className="w-8 h-8 sm:w-10 sm:h-10">
+          {icon}
+        </div>
+        
+        {/* Title */}
+        <h3 className="text-sm sm:text-base font-medium text-white/90 text-center">
+          {title}
+        </h3>
       </motion.div>
 
       {/* Hover Overlay */}

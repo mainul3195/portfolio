@@ -3,14 +3,13 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ModalType } from '@/types';
 import EducationModal from '@/components/EducationModal';
-import ContactForm from '@/components/ContactForm';
 import CompetitiveProgrammingModal from '@/components/CompetitiveProgrammingModal';
 import TableTennisModal from '@/components/TableTennisModal';
-import ProjectsModal from '@/components/ProjectsModal';
 import LeadershipModal from '@/components/LeadershipModal';
 import PresidentScoutModal from '@/components/PresidentScoutModal';
 import ResearchModal from '@/components/ResearchModal';
 import HighSchoolModal from '@/components/HighSchoolModal';
+import ProjectsModal from '@/components/ProjectsModal';
 import HeroSection from '@/components/HeroSection';
 import AchievementsSection from '@/components/AchievementsSection';
 import LeadershipSection from '@/components/LeadershipSection';
@@ -33,11 +32,11 @@ export default function Home() {
   const [isEducationModalOpen, setIsEducationModalOpen] = useState(false);
   const [isCompetitiveProgrammingModalOpen, setIsCompetitiveProgrammingModalOpen] = useState(false);
   const [isTableTennisModalOpen, setIsTableTennisModalOpen] = useState(false);
-  const [isProjectsModalOpen, setIsProjectsModalOpen] = useState(false);
   const [isLeadershipModalOpen, setIsLeadershipModalOpen] = useState(false);
   const [isPresidentScoutModalOpen, setIsPresidentScoutModalOpen] = useState(false);
   const [isResearchModalOpen, setIsResearchModalOpen] = useState(false);
   const [isHighSchoolModalOpen, setIsHighSchoolModalOpen] = useState(false);
+  const [isProjectsModalOpen, setIsProjectsModalOpen] = useState(false);
   const [modalType, setModalType] = useState<ModalType | null>(null);
 
   const handleModalOpen = (modalType: ModalType) => {
@@ -51,9 +50,6 @@ export default function Home() {
       case 'table-tennis':
         setIsTableTennisModalOpen(true);
         break;
-      case 'projects':
-        setIsProjectsModalOpen(true);
-        break;
       case 'leadership':
         setIsLeadershipModalOpen(true);
         break;
@@ -66,7 +62,11 @@ export default function Home() {
       case 'high-school':
         setIsHighSchoolModalOpen(true);
         break;
+      case 'projects':
+        setIsProjectsModalOpen(true);
+        break;
     }
+    setModalType(modalType);
   };
 
   return (
@@ -87,20 +87,20 @@ export default function Home() {
       >
         <HeroSection />
         <AchievementsSection onOpenModal={handleModalOpen} />
-        <LeadershipSection onOpenModal={handleModalOpen} />
         <CompetitiveProgrammingSection />
         <ProjectsSection />
+        <LeadershipSection onOpenModal={handleModalOpen} />
       </motion.div>
       
       {/* Modals */}
       <EducationModal isOpen={isEducationModalOpen} onClose={() => setIsEducationModalOpen(false)} />
       <CompetitiveProgrammingModal isOpen={isCompetitiveProgrammingModalOpen} onClose={() => setIsCompetitiveProgrammingModalOpen(false)} />
       <TableTennisModal isOpen={isTableTennisModalOpen} onClose={() => setIsTableTennisModalOpen(false)} />
-      <ProjectsModal isOpen={isProjectsModalOpen} onClose={() => setIsProjectsModalOpen(false)} />
       <LeadershipModal isOpen={isLeadershipModalOpen} onClose={() => setIsLeadershipModalOpen(false)} />
       <PresidentScoutModal isOpen={isPresidentScoutModalOpen} onClose={() => setIsPresidentScoutModalOpen(false)} />
       <ResearchModal isOpen={isResearchModalOpen} onClose={() => setIsResearchModalOpen(false)} />
       <HighSchoolModal isOpen={isHighSchoolModalOpen} onClose={() => setIsHighSchoolModalOpen(false)} />
+      <ProjectsModal isOpen={isProjectsModalOpen} onClose={() => setIsProjectsModalOpen(false)} />
     </motion.div>
   );
 }

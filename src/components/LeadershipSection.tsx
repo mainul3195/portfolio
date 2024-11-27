@@ -1,6 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
-import { FaUsers, FaMedal, FaStar, FaAward } from 'react-icons/fa';
+import { FaUsers, FaHandHoldingHeart, FaUserTie, FaLaptopCode, FaHospital, FaFlag } from 'react-icons/fa';
 import { ModalType } from '@/types';
 
 interface LeadershipSectionProps {
@@ -8,12 +8,63 @@ interface LeadershipSectionProps {
 }
 
 export default function LeadershipSection({ onOpenModal }: LeadershipSectionProps) {
+  const activities = [
+    {
+      icon: <FaFlag />,
+      title: "Scout Leadership",
+      description: "Former Senior Patrol Leader of Bindubashini Govt. Boys' High School Scout Group",
+      color: "from-blue-500/5 to-blue-600/10",
+      borderColor: "border-blue-500/10",
+      iconColor: "text-blue-400"
+    },
+    {
+      icon: <FaLaptopCode />,
+      title: "CP Mentorship",
+      description: "Competitive Programming mentor of SUST Competitive Programming Community",
+      color: "from-purple-500/5 to-purple-600/10",
+      borderColor: "border-purple-500/10",
+      iconColor: "text-purple-400"
+    },
+    {
+      icon: <FaUserTie />,
+      title: "Training Coordinator",
+      description: "Current Coordinator & Trainer of SUST Competitive Programming Training Camp",
+      color: "from-emerald-500/5 to-emerald-600/10",
+      borderColor: "border-emerald-500/10",
+      iconColor: "text-emerald-400"
+    },
+    {
+      icon: <FaUsers />,
+      title: "Event Coordination",
+      description: "Coordinator of IUPC volunteers for SUST CSE Carnival 2024",
+      color: "from-rose-500/5 to-rose-600/10",
+      borderColor: "border-rose-500/10",
+      iconColor: "text-rose-400"
+    },
+    {
+      icon: <FaHandHoldingHeart />,
+      title: "Student Organization",
+      description: "Former Assistant Organizing Secretary of Tangail Students' Association, SUST",
+      color: "from-amber-500/5 to-amber-600/10",
+      borderColor: "border-amber-500/10",
+      iconColor: "text-amber-400"
+    },
+    {
+      icon: <FaHospital />,
+      title: "Community Service",
+      description: "Participation in Free Medical Camps",
+      color: "from-cyan-500/5 to-cyan-600/10",
+      borderColor: "border-cyan-500/10",
+      iconColor: "text-cyan-400"
+    }
+  ];
+
   const container = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2
+        staggerChildren: 0.1
       }
     }
   };
@@ -46,135 +97,49 @@ export default function LeadershipSection({ onOpenModal }: LeadershipSectionProp
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-slate-100 mb-4">
-            Leadership & Activities
+            Leadership & Voluntary Activities
           </h2>
           <p className="text-slate-400 max-w-2xl mx-auto">
-            Explore my journey through various leadership roles and community engagements
+            A collection of leadership roles and community service activities that have shaped my professional growth and commitment to giving back.
           </p>
         </motion.div>
 
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6"
+        <motion.div
           variants={container}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
-          {/* Leadership Card */}
-          <motion.div
-            variants={cardVariants}
-            whileHover={{ scale: 1.02 }}
-            className="group relative overflow-hidden rounded-xl backdrop-blur-sm bg-gradient-to-r from-rose-500/10 to-rose-600/10 border border-slate-700/50 p-6 shadow-[0_0_15px_rgba(244,63,94,0.15)]"
-            onClick={() => onOpenModal('leadership')}
-          >
-            <div className="flex items-start gap-4">
-              <motion.div
-                whileHover={{ scale: 1.1, rotate: [0, -10, 10, -10, 0] }}
-                className="flex-shrink-0 w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center text-2xl text-rose-400"
-              >
-                <FaUsers />
-              </motion.div>
-              <div>
-                <h3 className="text-xl font-semibold text-slate-100 mb-2 group-hover:text-white transition-colors">
-                  Leadership Experience
+          {activities.map((activity, index) => (
+            <motion.div
+              key={activity.title}
+              variants={cardVariants}
+              whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
+              className={`relative group backdrop-blur-lg bg-gradient-to-br ${activity.color} 
+                border ${activity.borderColor} rounded-xl p-6 
+                shadow-[0_8px_32px_rgba(0,0,0,0.12)] 
+                hover:shadow-[0_8px_32px_rgba(0,0,0,0.2)]
+                transition-all duration-300`}
+            >
+              {/* Glass overlay effect */}
+              <div className="absolute inset-0 rounded-xl bg-white/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              
+              <div className="relative z-10">
+                <div className={`${activity.iconColor} text-3xl mb-4 transform transition-transform group-hover:scale-110 duration-300`}>
+                  {activity.icon}
+                </div>
+                <h3 className="text-xl font-semibold text-slate-100 mb-2">
+                  {activity.title}
                 </h3>
-                <p className="text-slate-300 group-hover:text-slate-200 transition-colors">
-                  Leading and organizing various academic and community initiatives
-                </p>
-                <motion.p 
-                  className="text-rose-400 mt-3 flex items-center gap-2 text-sm"
-                  whileHover={{ x: 5 }}
-                >
-                  View Details <span className="text-lg">→</span>
-                </motion.p>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* President Scout Card */}
-          <motion.div
-            variants={cardVariants}
-            whileHover={{ scale: 1.02 }}
-            className="group relative overflow-hidden rounded-xl backdrop-blur-sm bg-gradient-to-r from-purple-500/10 to-purple-600/10 border border-slate-700/50 p-6 shadow-[0_0_15px_rgba(168,85,247,0.15)]"
-            onClick={() => onOpenModal('president-scout')}
-          >
-            <div className="flex items-start gap-4">
-              <motion.div
-                whileHover={{ scale: 1.1, rotate: [0, -10, 10, -10, 0] }}
-                className="flex-shrink-0 w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center text-2xl text-purple-400"
-              >
-                <FaMedal />
-              </motion.div>
-              <div>
-                <h3 className="text-xl font-semibold text-slate-100 mb-2 group-hover:text-white transition-colors">
-                  President Scout
-                </h3>
-                <p className="text-slate-300 group-hover:text-slate-200 transition-colors">
-                  Highest recognition in Bangladesh Scouts
-                </p>
-                <motion.p 
-                  className="text-purple-400 mt-3 flex items-center gap-2 text-sm"
-                  whileHover={{ x: 5 }}
-                >
-                  View Details <span className="text-lg">→</span>
-                </motion.p>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* CP Mentorship Card */}
-          <motion.div
-            variants={cardVariants}
-            whileHover={{ scale: 1.02 }}
-            className="group relative overflow-hidden rounded-xl backdrop-blur-sm bg-gradient-to-r from-amber-500/10 to-amber-600/10 border border-slate-700/50 p-6 shadow-[0_0_15px_rgba(245,158,11,0.15)]"
-          >
-            <div className="flex items-start gap-4">
-              <motion.div
-                whileHover={{ scale: 1.1, rotate: [0, -10, 10, -10, 0] }}
-                className="flex-shrink-0 w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center text-2xl text-amber-400"
-              >
-                <FaStar />
-              </motion.div>
-              <div>
-                <h3 className="text-xl font-semibold text-slate-100 mb-2 group-hover:text-white transition-colors">
-                  CP Mentorship
-                </h3>
-                <p className="text-slate-300 group-hover:text-slate-200 transition-colors">
-                  Mentoring and training students in competitive programming
+                <p className="text-slate-300">
+                  {activity.description}
                 </p>
               </div>
-            </div>
-          </motion.div>
-
-          {/* Event Management Card */}
-          <motion.div
-            variants={cardVariants}
-            whileHover={{ scale: 1.02 }}
-            className="group relative overflow-hidden rounded-xl backdrop-blur-sm bg-gradient-to-r from-green-500/10 to-green-600/10 border border-slate-700/50 p-6 shadow-[0_0_15px_rgba(34,197,94,0.15)]"
-          >
-            <div className="flex items-start gap-4">
-              <motion.div
-                whileHover={{ scale: 1.1, rotate: [0, -10, 10, -10, 0] }}
-                className="flex-shrink-0 w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center text-2xl text-green-400"
-              >
-                <FaAward />
-              </motion.div>
-              <div>
-                <h3 className="text-xl font-semibold text-slate-100 mb-2 group-hover:text-white transition-colors">
-                  Event Coordination
-                </h3>
-                <p className="text-slate-300 group-hover:text-slate-200 transition-colors">
-                  Managing and coordinating major university events
-                </p>
-              </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          ))}
         </motion.div>
       </div>
-
-      {/* Background Decorative Elements */}
-      <div className="absolute -top-24 -right-24 w-96 h-96 bg-rose-500/5 rounded-full blur-3xl" />
-      <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl" />
     </section>
   );
 }

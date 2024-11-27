@@ -20,9 +20,7 @@ const Navbar = () => {
 
   const navItems = [
     { name: 'Home', icon: <FaHome />, href: '/' },
-    { name: 'About', icon: <FaUser />, href: '/about' },
-    { name: 'Projects', icon: <FaCode />, href: '/projects' },
-    { name: 'Achievements', icon: <FaTrophy />, href: '/achievements' },
+    { name: 'About Me', icon: <FaUser />, href: '/about' },
     { name: 'Contact', icon: <FaEnvelope />, href: '/contact' },
   ];
 
