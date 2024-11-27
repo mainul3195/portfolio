@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import FloatingContactButton from '@/components/FloatingContactButton'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -23,6 +24,7 @@ export default function RootLayout({
         <main className="flex-grow">
           {children}
         </main>
+        <FloatingContactButton />
         <Footer />
       </body>
     </html>
