@@ -1,63 +1,62 @@
+'use client';
+
+import { motion } from 'framer-motion';
+
+const interests = [
+  'Public Speaking',
+  'Problem-Solving',
+  'Teamwork',
+  'Teaching & Mentoring',
+  'Cycling',
+  'Traveling',
+  'Learning new technology'
+];
+
 export default function About() {
   return (
-    <div className="container mx-auto px-6 py-20">
-      <div className="max-w-3xl mx-auto">
+    <div className="min-h-screen py-20 bg-gradient-to-b from-slate-900 to-slate-950">
+      <div className="max-w-4xl mx-auto px-6">
         {/* Introduction Section */}
-        <section className="mb-16">
-          <h1 className="text-4xl font-bold mb-8">About Me</h1>
-          <div className="prose prose-lg">
-            <p className="text-gray-600 mb-4">
-              Hello! I'm Mainul Hasan, a Computer Science student with a passion for web development
-              and software engineering. I enjoy creating elegant solutions to complex problems and
-              am constantly learning new technologies to expand my skill set.
-            </p>
-            <p className="text-gray-600">
-              My journey in technology began with a curiosity about how things work, which led me
-              to pursue Computer Science. Today, I focus on web development, particularly using
-              modern technologies like React, Next.js, and Node.js.
-            </p>
-          </div>
-        </section>
-
-        {/* Education Section */}
-        <section className="mb-16">
-          <h2 className="text-2xl font-bold mb-6">Education</h2>
-          <div className="bg-white rounded-lg shadow-sm p-6 mb-4">
-            <h3 className="text-xl font-semibold mb-2">Bachelor of Science in Computer Science</h3>
-            <p className="text-gray-600">University Name • 2020 - Present</p>
-            <ul className="mt-4 text-gray-600 list-disc list-inside">
-              <li>Relevant coursework in Data Structures, Algorithms, and Software Engineering</li>
-              <li>Active member of the Computer Science Club</li>
-              <li>Participated in various hackathons and coding competitions</li>
-            </ul>
-          </div>
-        </section>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mb-16 text-center"
+        >
+          <h1 className="text-4xl md:text-5xl font-bold mb-8 text-slate-100">
+            About Me
+          </h1>
+          <p className="text-lg md:text-xl text-slate-300 leading-relaxed">
+            An ambitious dreamer daring to make a difference, a well-rounded leader seeking knowledge across disciplines, and a compassionate son motivated to ease his parents' sacrifices.
+          </p>
+        </motion.div>
 
         {/* Interests Section */}
-        <section>
-          <h2 className="text-2xl font-bold mb-6">Interests & Activities</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-white rounded-lg shadow-sm p-6">
-              <h3 className="text-xl font-semibold mb-4">Technical Interests</h3>
-              <ul className="text-gray-600 space-y-2">
-                <li>• Web Development</li>
-                <li>• Software Architecture</li>
-                <li>• Cloud Computing</li>
-                <li>• Machine Learning</li>
-              </ul>
-            </div>
-            <div className="bg-white rounded-lg shadow-sm p-6">
-              <h3 className="text-xl font-semibold mb-4">Activities</h3>
-              <ul className="text-gray-600 space-y-2">
-                <li>• Open Source Contributing</li>
-                <li>• Technical Blogging</li>
-                <li>• Hackathons</li>
-                <li>• Coding Competitions</li>
-              </ul>
-            </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="bg-slate-800/30 rounded-2xl p-8 backdrop-blur-sm border border-slate-700/30"
+        >
+          <h2 className="text-2xl md:text-3xl font-semibold mb-8 text-slate-100 text-center">
+            Interests & Passions
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {interests.map((interest, index) => (
+              <motion.div
+                key={interest}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.3 + index * 0.1 }}
+                className="p-4 bg-slate-800/50 rounded-xl border border-slate-700/50 hover:border-blue-500/30 transition-colors"
+              >
+                <p className="text-center text-slate-300 font-medium">
+                  {interest}
+                </p>
+              </motion.div>
+            ))}
           </div>
-        </section>
+        </motion.div>
       </div>
     </div>
-  )
+  );
 }
