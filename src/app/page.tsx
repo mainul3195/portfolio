@@ -14,7 +14,6 @@ import HighSchoolModal from '@/components/HighSchoolModal';
 import HeroSection from '@/components/HeroSection';
 import AchievementsSection from '@/components/AchievementsSection';
 import LeadershipSection from '@/components/LeadershipSection';
-import ExtraCurricularSection from '@/components/ExtraCurricularSection';
 import CompetitiveProgrammingSection from '@/components/CompetitiveProgrammingSection';
 import ProjectsSection from '@/components/ProjectsSection';
 
@@ -89,7 +88,6 @@ export default function Home() {
         <HeroSection />
         <AchievementsSection onOpenModal={handleModalOpen} />
         <LeadershipSection onOpenModal={handleModalOpen} />
-        <ExtraCurricularSection />
         <CompetitiveProgrammingSection />
         <ProjectsSection />
       </motion.div>
