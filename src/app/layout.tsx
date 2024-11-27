@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className} bg-slate-900 text-white min-h-screen flex flex-col`}>
+      <body suppressHydrationWarning className={`${inter.className} bg-slate-900 text-white min-h-screen flex flex-col`}>
         <Navbar />
         <main className="flex-grow">
           {children}
