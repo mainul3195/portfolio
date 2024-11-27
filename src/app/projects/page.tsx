@@ -1,108 +1,160 @@
 'use client';
 
-import { FaJava, FaReact, FaNode, FaDatabase, FaCode, FaHome, FaTrophy, FaCodeBranch } from 'react-icons/fa';
-import { SiMongodb, SiExpress, SiCplusplus, SiEspressif, SiCodeforces, SiLeetcode } from 'react-icons/si';
-import { TbBrandNextjs } from 'react-icons/tb';
 import { motion } from 'framer-motion';
-
-const projects = [
-  {
-    title: "Competitive Programming",
-    description: "Active participant in competitive programming contests on platforms like Codeforces, LeetCode, and HackerRank. Solved 500+ algorithmic problems.",
-    technologies: ["C++", "Data Structures", "Algorithms", "Problem Solving"],
-    icons: [SiCodeforces, SiLeetcode, SiCplusplus, FaTrophy],
-    type: "Algorithmic Problem Solving"
-  },
-  {
-    title: "iShopNow",
-    description: "A user-friendly e-commerce website built with the MERN stack, featuring modern design and full e-commerce functionality.",
-    technologies: ["MongoDB", "Express", "React", "Node.js"],
-    icons: [SiMongodb, SiExpress, FaReact, FaNode],
-    type: "Full Stack"
-  },
-  {
-    title: "Pigeonnier",
-    description: "An Email Client Software using JavaFX that provides all Gmail website functionalities plus additional features.",
-    technologies: ["Java", "JavaFX", "Email APIs"],
-    icons: [FaJava, FaCode, FaCode],
-    type: "Desktop Application"
-  },
-  {
-    title: "IOT-Based Home Control System",
-    description: "A smart home control system using esp8266 and Blynk, enabling worldwide control of home appliances via internet.",
-    technologies: ["ESP8266", "Blynk", "IoT"],
-    icons: [SiEspressif, FaHome],
-    type: "IoT Project"
-  },
-  {
-    title: "Online Course Management System",
-    description: "A web-based course management platform built with Java technologies and SQL database.",
-    technologies: ["Servlet", "JSP", "SQL", "HTML/CSS"],
-    icons: [FaJava, FaDatabase, FaCode],
-    type: "Web Application"
-  },
-  {
-    title: "Interactive Tic-Tac-Toe",
-    description: "An interactive command-line game implemented in C featuring player vs computer gameplay.",
-    technologies: ["C", "Algorithms"],
-    icons: [SiCplusplus, FaCode],
-    type: "Console Application"
-  }
-];
+import { FaGithub, FaExternalLinkAlt, FaReact, FaNode, FaCode, FaJava, FaDesktop, 
+         FaHome, FaMobileAlt, FaServer, FaBrain, FaGamepad } from 'react-icons/fa';
+import { SiMongodb, SiExpress, SiTypescript, SiSpringboot, SiPostgresql, 
+         SiMysql, SiEspressif } from 'react-icons/si';
+import { TbBrandCpp } from 'react-icons/tb';
 
 export default function Projects() {
+  const projects = [
+    {
+      title: "iShopNow",
+      description: "A user-friendly e-commerce website using MERN stack: MongoDB for database, Express for server-side framework, React for client-side framework, and Node.js for backend.",
+      github: 'https://github.com/mainul3195/ishopnow',
+      tech: [
+        { name: 'MongoDB', icon: <SiMongodb className="text-green-500" /> },
+        { name: 'Express', icon: <SiExpress className="text-white" /> },
+        { name: 'React', icon: <FaReact className="text-cyan-400" /> },
+        { name: 'Node.js', icon: <FaNode className="text-green-500" /> },
+        { name: 'TypeScript', icon: <SiTypescript className="text-blue-400" /> }
+      ],
+      type: "Full Stack"
+    },
+    {
+      title: "Pigeonnier",
+      description: "An Email Client Software using JavaFX that gives all the facilities of the Gmail website as well as some extra features.",
+      github: 'https://github.com/mainul3195/pigeonnier',
+      tech: [
+        { name: 'Java', icon: <FaJava className="text-red-500" /> },
+        { name: 'JavaFX', icon: <FaDesktop className="text-blue-400" /> },
+        { name: 'Spring Boot', icon: <SiSpringboot className="text-green-500" /> },
+        { name: 'PostgreSQL', icon: <SiPostgresql className="text-blue-400" /> }
+      ],
+      type: "Desktop Application"
+    },
+    {
+      title: "IOT-Based Home Control System",
+      description: "Using the esp8266 microcontroller and the facilities of Blynk, we made a system to control all home appliances from any part of the world over the internet.",
+      github: 'https://github.com/mainul3195/iot-home',
+      tech: [
+        { name: 'ESP8266', icon: <SiEspressif className="text-red-500" /> },
+        { name: 'Blynk', icon: <FaHome className="text-blue-400" /> },
+        { name: 'IoT', icon: <FaMobileAlt className="text-green-500" /> },
+        { name: 'C++', icon: <TbBrandCpp className="text-blue-400" /> }
+      ],
+      type: "IoT Project"
+    },
+    {
+      title: "Online Course Management System",
+      description: "A web project using Servlet, JSP for the backend, SQL for managing the Database, and HTML, and CSS for the front end.",
+      github: 'https://github.com/mainul3195/course-management',
+      tech: [
+        { name: 'Java', icon: <FaJava className="text-red-500" /> },
+        { name: 'Spring Boot', icon: <SiSpringboot className="text-green-500" /> },
+        { name: 'MySQL', icon: <SiMysql className="text-blue-400" /> },
+        { name: 'Server', icon: <FaServer className="text-gray-400" /> }
+      ],
+      type: "Web Application"
+    },
+    {
+      title: "Interactive Tic-Tac-Toe",
+      description: "A learning project for language C where a player can interactively play the game with a computer.",
+      github: 'https://github.com/mainul3195/tic-tac-toe',
+      tech: [
+        { name: 'C', icon: <FaCode className="text-gray-400" /> },
+        { name: 'Algorithms', icon: <FaBrain className="text-purple-400" /> },
+        { name: 'Game Dev', icon: <FaGamepad className="text-green-400" /> }
+      ],
+      type: "Console Application"
+    }
+  ];
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#140a28] to-[#1a1a2f] text-white py-20 px-4 sm:px-6">
+    <main className="min-h-screen py-20 px-4">
       <div className="max-w-6xl mx-auto">
         <motion.h1 
+          className="text-4xl md:text-5xl font-bold mb-6 text-slate-100 text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-4xl md:text-5xl font-bold mb-12 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-transparent bg-clip-text"
         >
           Projects
         </motion.h1>
         
-        <div className="grid gap-8 md:grid-cols-2">
+        <motion.p
+          className="text-slate-400 text-center mb-12 text-lg"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
+        >
+          A showcase of my recent development projects and applications
+        </motion.p>
+
+        <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <motion.div
-              key={index}
+              key={project.title}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="backdrop-blur-lg bg-white/10 rounded-xl p-6 hover:bg-white/15 transition-all duration-300 border border-white/10"
+              className="group backdrop-blur-lg bg-slate-900/50 border border-slate-800/50 rounded-xl overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.12)]"
             >
-              <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-              <span className="inline-block px-3 py-1 text-sm rounded-full bg-purple-500/20 text-purple-300 mb-4">
-                {project.type}
-              </span>
-              <p className="text-gray-300 mb-4">{project.description}</p>
-              
-              <div className="mb-4">
-                <h4 className="text-sm font-medium text-gray-400 mb-2">Technologies:</h4>
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className="px-3 py-1 text-sm rounded-full bg-blue-500/20 text-blue-300"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+              <div className="relative h-48 bg-gradient-to-br from-slate-800 to-slate-900/50 overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center text-slate-600">
+                  <div className="text-6xl">
+                    {project.tech[0].icon}
+                  </div>
                 </div>
               </div>
               
-              <div className="flex gap-4 text-2xl text-gray-400">
-                {project.icons.map((Icon, iconIndex) => (
-                  <Icon
-                    key={iconIndex}
-                    className="hover:text-white transition-colors duration-200"
-                  />
-                ))}
+              <div className="p-6">
+                <div className="flex items-center justify-between mb-4">
+                  <div>
+                    <h2 className="text-2xl font-bold text-slate-100">
+                      {project.title}
+                    </h2>
+                    <span className="text-sm text-slate-400">{project.type}</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    {project.github && (
+                      <motion.a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="text-slate-400 hover:text-slate-100 transition-colors"
+                      >
+                        <FaGithub className="text-xl" />
+                      </motion.a>
+                    )}
+                  </div>
+                </div>
+
+                <p className="text-slate-300 mb-6">
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap items-center gap-4">
+                  {project.tech.map((tech, techIndex) => (
+                    <motion.div
+                      key={tech.name}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.1 + techIndex * 0.1 }}
+                      className="flex items-center space-x-2"
+                    >
+                      <span className="text-xl">{tech.icon}</span>
+                      <span className="text-sm text-slate-400">{tech.name}</span>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
             </motion.div>
           ))}
         </div>
       </div>
-    </div>
+    </main>
   );
 }
