@@ -65,7 +65,7 @@ export default function LeadershipSection({ onOpenModal }: LeadershipSectionProp
             variants={cardVariants}
             whileHover={{ scale: 1.02 }}
             className="group relative overflow-hidden rounded-xl backdrop-blur-sm bg-gradient-to-r from-rose-500/10 to-rose-600/10 border border-slate-700/50 p-6 shadow-[0_0_15px_rgba(244,63,94,0.15)]"
-            onClick={() => onOpenModal('Leadership')}
+            onClick={() => onOpenModal('leadership')}
           >
             <div className="flex items-start gap-4">
               <motion.div
@@ -96,7 +96,7 @@ export default function LeadershipSection({ onOpenModal }: LeadershipSectionProp
             variants={cardVariants}
             whileHover={{ scale: 1.02 }}
             className="group relative overflow-hidden rounded-xl backdrop-blur-sm bg-gradient-to-r from-purple-500/10 to-purple-600/10 border border-slate-700/50 p-6 shadow-[0_0_15px_rgba(168,85,247,0.15)]"
-            onClick={() => onOpenModal('PresidentScout')}
+            onClick={() => onOpenModal('president-scout')}
           >
             <div className="flex items-start gap-4">
               <motion.div
