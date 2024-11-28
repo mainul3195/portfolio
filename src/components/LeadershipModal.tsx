@@ -36,13 +36,6 @@ export default function LeadershipModal({ isOpen, onClose }: LeadershipModalProp
           className="relative w-full max-w-3xl backdrop-blur-lg bg-slate-900/90 border border-slate-700/50 rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.12)] max-h-[80vh] overflow-hidden"
         >
           <div className="overflow-y-auto h-full max-h-[80vh] px-6 pb-6 pt-16 scrollbar-thin scrollbar-track-slate-800 scrollbar-thumb-slate-600 hover:scrollbar-thumb-slate-500">
-            <button
-              onClick={onClose}
-              className="absolute top-4 right-4 text-slate-400 hover:text-slate-200 transition-colors"
-            >
-              <IoClose size={24} />
-            </button>
-
             <h2 className="text-3xl font-bold mb-8 text-slate-100 flex items-center gap-3">
               <FaUsers className="w-8 h-8 text-rose-400" />
               Leadership Roles
@@ -63,6 +56,15 @@ export default function LeadershipModal({ isOpen, onClose }: LeadershipModalProp
                   </div>
                 </motion.div>
               ))}
+            </div>
+
+            <div className="mt-8 flex justify-center">
+              <button
+                onClick={onClose}
+                className="px-6 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg transition-colors duration-200"
+              >
+                Close
+              </button>
             </div>
           </div>
         </motion.div>

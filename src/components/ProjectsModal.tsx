@@ -93,16 +93,8 @@ export default function ProjectsModal({
           onClick={(e) => e.stopPropagation()}
           className="relative w-full max-w-4xl backdrop-blur-lg bg-slate-900/90 border border-slate-700/50 rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.12)] max-h-[80vh] overflow-hidden"
         >
-          <div className="p-6 overflow-y-auto max-h-[80vh]">
-            <div className="flex justify-between items-center mb-6">
-              <h2 className="text-3xl font-bold text-slate-100">Projects</h2>
-              <button
-                onClick={onClose}
-                className="text-slate-400 hover:text-slate-100 transition-colors"
-              >
-                <IoClose className="w-6 h-6" />
-              </button>
-            </div>
+          <div className="p-6 overflow-y-auto max-h-[80vh] scrollbar-thin">
+            <h2 className="text-3xl font-bold mb-8 text-slate-100">Projects</h2>
 
             <div className="grid gap-6">
               {projects.map((project) => (
@@ -139,6 +131,15 @@ export default function ProjectsModal({
                   </div>
                 </div>
               ))}
+            </div>
+
+            <div className="mt-8 flex justify-center">
+              <button
+                onClick={onClose}
+                className="px-6 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg transition-colors duration-200"
+              >
+                Close
+              </button>
             </div>
           </div>
         </motion.div>

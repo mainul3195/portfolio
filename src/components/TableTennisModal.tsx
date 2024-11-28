@@ -36,21 +36,13 @@ export default function TableTennisModal({
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.95, opacity: 0 }}
           onClick={(e) => e.stopPropagation()}
-          className="bg-slate-900 border border-slate-800 rounded-xl p-6 md:p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-xl"
+          className="bg-slate-900 border border-slate-800 rounded-xl p-6 md:p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-xl scrollbar-thin"
         >
-          <div className="flex justify-between items-center mb-6">
-            <div className="flex items-center gap-3">
-              <FaTableTennis className="w-6 h-6 text-green-400" />
-              <h2 className="text-2xl md:text-3xl font-bold text-slate-100">
-                Table Tennis Achievements
-              </h2>
-            </div>
-            <button
-              onClick={onClose}
-              className="text-slate-400 hover:text-slate-100 transition-colors"
-            >
-              <IoClose className="w-6 h-6" />
-            </button>
+          <div className="flex items-center gap-3 mb-6">
+            <FaTableTennis className="w-6 h-6 text-green-400" />
+            <h2 className="text-2xl md:text-3xl font-bold text-slate-100">
+              Table Tennis Achievements
+            </h2>
           </div>
 
           <div className="space-y-4">
@@ -68,6 +60,15 @@ export default function TableTennisModal({
                 </motion.li>
               ))}
             </ul>
+          </div>
+
+          <div className="mt-8 flex justify-center">
+            <button
+              onClick={onClose}
+              className="px-6 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg transition-colors duration-200"
+            >
+              Close
+            </button>
           </div>
         </motion.div>
       </motion.div>
