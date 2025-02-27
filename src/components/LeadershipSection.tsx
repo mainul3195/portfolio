@@ -50,6 +50,14 @@ export default function LeadershipSection({ onOpenModal }: LeadershipSectionProp
       iconColor: "text-amber-400"
     },
     {
+      icon: <FaLaptopCode />,
+      title: "University Training",
+      description: "Competitive Programming Trainer at Sylhet International University",
+      color: "from-indigo-500/5 to-indigo-600/10",
+      borderColor: "border-indigo-500/10",
+      iconColor: "text-indigo-400"
+    },
+    {
       icon: <FaHospital />,
       title: "Community Service",
       description: "Participation in Free Medical Camps",

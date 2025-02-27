@@ -13,7 +13,8 @@ const leadershipRoles = [
   "Competitive Programming mentor of SUST Competitive Programming Community",
   "Current Coordinator & Trainer of SUST Competitive Programming Training Camp",
   "Coordinator of IUPC volunteers for SUST CSE Carnival 2024",
-  "Former Assistant Organizing Secretary of Tangail Students' Association, SUST"
+  "Former Assistant Organizing Secretary of Tangail Students' Association, SUST",
+  "Competitive Programming Trainer at Sylhet International University"
 ];
 
 export default function LeadershipModal({ isOpen, onClose }: LeadershipModalProps) {
