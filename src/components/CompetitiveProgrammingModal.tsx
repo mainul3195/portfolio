@@ -75,7 +75,7 @@ export default function CompetitiveProgrammingModal({ isOpen, onClose }: Competi
                       <div>
                         <h4 className="text-lg font-semibold text-blue-300/90 mb-3">Participations</h4>
                         <ul className="list-none space-y-2">
-                          <li className="text-slate-300">Nine Inter University Programming Contests</li>
+                          <li className="text-slate-300">Fourteen Inter University Programming Contests</li>
                           <li className="text-slate-300">ICPC Dhaka Regional 2020, 2021, and 2023</li>
                           <li className="text-slate-300">2023 ICPC Asia West Continent Final Contest</li>
                           <li className="text-slate-300">National Collegiate Programming Contest 2023</li>

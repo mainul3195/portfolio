@@ -48,7 +48,7 @@ export default function CompetitiveProgrammingSection() {
             </h3>
             <ul className="space-y-2">
               {[
-                "Nine Inter University Programming Contests",
+                "Fourteen Inter University Programming Contests",
                 "ICPC Dhaka Regional 2020, 2021, and 2023",
                 "2023 ICPC Asia West Continent Final Contest",
                 "National Collegiate Programming Contest 2023",
