@@ -3,6 +3,8 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { IoClose } from 'react-icons/io5';
 import { FaTableTennis } from 'react-icons/fa';
+import { useEffect } from 'react';
+import { lockScroll, unlockScroll } from '@/utils/scrollLock';
 
 interface TableTennisModalProps {
   isOpen: boolean;
@@ -13,6 +15,15 @@ export default function TableTennisModal({
   isOpen,
   onClose
 }: TableTennisModalProps) {
+  useEffect(() => {
+    if (isOpen) {
+      lockScroll();
+    } else {
+      unlockScroll();
+    }
+    return () => unlockScroll();
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   const achievements = [

@@ -2,7 +2,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { IoClose } from 'react-icons/io5';
 import { education } from '@/data/education';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 interface EducationModalProps {
   isOpen: boolean;
@@ -10,6 +10,23 @@ interface EducationModalProps {
 }
 
 export default function EducationModal({ isOpen, onClose }: EducationModalProps) {
+  useEffect(() => {
+    const lockScroll = () => {
+      document.body.style.overflow = 'hidden';
+    };
+
+    const unlockScroll = () => {
+      document.body.style.overflow = 'auto';
+    };
+
+    if (isOpen) {
+      lockScroll();
+    } else {
+      unlockScroll();
+    }
+    return () => unlockScroll();
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   return (

@@ -6,6 +6,8 @@ import { FaGithub, FaExternalLinkAlt, FaReact, FaNode, FaCode, FaJava, FaDesktop
          FaHome, FaMobileAlt, FaServer, FaBrain, FaGamepad, FaCss3Alt, FaHtml5, FaKey } from 'react-icons/fa';
 import { SiMongodb, SiExpress, SiTypescript, SiMysql, SiEspressif } from 'react-icons/si';
 import { TbDatabase } from 'react-icons/tb';
+import { useEffect } from 'react';
+import { lockScroll, unlockScroll } from '@/utils/scrollLock';
 
 interface ProjectsModalProps {
   isOpen: boolean;
@@ -16,6 +18,15 @@ export default function ProjectsModal({
   isOpen,
   onClose
 }: ProjectsModalProps) {
+  useEffect(() => {
+    if (isOpen) {
+      lockScroll();
+    } else {
+      unlockScroll();
+    }
+    return () => unlockScroll();
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   const projects = [

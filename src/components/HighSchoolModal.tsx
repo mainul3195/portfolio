@@ -1,7 +1,8 @@
 'use client';
 import { Dialog, Transition } from '@headlessui/react';
-import { Fragment } from 'react';
+import { Fragment, useEffect } from 'react';
 import { FaPalette, FaChess, FaAward, FaBookOpen } from 'react-icons/fa';
+import { lockScroll, unlockScroll } from '@/utils/scrollLock';
 
 interface HighSchoolModalProps {
   isOpen: boolean;
@@ -9,6 +10,15 @@ interface HighSchoolModalProps {
 }
 
 export default function HighSchoolModal({ isOpen, onClose }: HighSchoolModalProps) {
+  useEffect(() => {
+    if (isOpen) {
+      lockScroll();
+    } else {
+      unlockScroll();
+    }
+    return () => unlockScroll();
+  }, [isOpen]);
+
   return (
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog as="div" className="relative z-50" onClose={onClose}>

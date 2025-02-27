@@ -2,6 +2,8 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { IoClose } from 'react-icons/io5';
 import { FaUsers } from 'react-icons/fa';
+import { useEffect } from 'react';
+import { lockScroll, unlockScroll } from '@/utils/scrollLock';
 
 interface LeadershipModalProps {
   isOpen: boolean;
@@ -18,6 +20,15 @@ const leadershipRoles = [
 ];
 
 export default function LeadershipModal({ isOpen, onClose }: LeadershipModalProps) {
+  useEffect(() => {
+    if (isOpen) {
+      lockScroll();
+    } else {
+      unlockScroll();
+    }
+    return () => unlockScroll();
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   return (
