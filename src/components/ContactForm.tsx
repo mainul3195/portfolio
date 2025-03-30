@@ -1,12 +1,12 @@
-'use client';
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import emailjs from '@emailjs/browser';
+"use client";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
 
 // Initialize EmailJS
-const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '';
-const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '';
-const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '';
+const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "";
+const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "";
+const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "";
 
 emailjs.init(PUBLIC_KEY);
 
@@ -14,45 +14,53 @@ interface ContactFormProps {
   className?: string;
 }
 
-export default function ContactForm({ className = '' }: ContactFormProps) {
+export default function ContactForm({ className = "" }: ContactFormProps) {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
 
   const [status, setStatus] = useState({
-    type: '',
-    message: '',
+    type: "",
+    message: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    console.log('Input changed:', e.target.name, e.target.value);
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    console.log("Input changed:", e.target.name, e.target.value);
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    console.log('Updated form data:', { ...formData, [e.target.name]: e.target.value });
+    console.log("Updated form data:", {
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus({ type: 'info', message: 'Sending...' });
+    setStatus({ type: "info", message: "Sending..." });
 
     if (!PUBLIC_KEY || !SERVICE_ID || !TEMPLATE_ID) {
-      console.error('EmailJS configuration is missing');
-      setStatus({ type: 'error', message: 'Email service configuration is missing' });
+      console.error("EmailJS configuration is missing");
+      setStatus({
+        type: "error",
+        message: "Email service configuration is missing",
+      });
       return;
     }
 
     try {
-      console.log('Attempting to send email...');
-      console.log('Form Data:', formData);
+      console.log("Attempting to send email...");
+      console.log("Form Data:", formData);
       const result = await emailjs.send(
         SERVICE_ID,
         TEMPLATE_ID,
         {
           to_name: "Mainul",
           from_name: formData.name || "Anonymous",
-          message: formData.message,
+          message: `Subject: ${formData.subject}\n\nMessage:\n${formData.message}`,
           reply_to: formData.email,
           subject: formData.subject,
           email: formData.email,
@@ -60,17 +68,23 @@ export default function ContactForm({ className = '' }: ContactFormProps) {
         PUBLIC_KEY
       );
 
-      console.log('Email sent successfully:', result);
-      setStatus({ type: 'success', message: "I've got your message. I'll get back to you soon." });
-      setFormData({ name: '', email: '', subject: '', message: '' });
+      console.log("Email sent successfully:", result);
+      setStatus({
+        type: "success",
+        message: "I've got your message. I'll get back to you soon.",
+      });
+      setFormData({ name: "", email: "", subject: "", message: "" });
     } catch (error) {
-      console.error('Error sending email:', error);
-      setStatus({ type: 'error', message: 'Failed to send message. Please try again.' });
+      console.error("Error sending email:", error);
+      setStatus({
+        type: "error",
+        message: "Failed to send message. Please try again.",
+      });
     }
   };
 
   return (
-    <motion.form 
+    <motion.form
       onSubmit={handleSubmit}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -78,7 +92,10 @@ export default function ContactForm({ className = '' }: ContactFormProps) {
     >
       <div className="grid md:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2">
+          <label
+            htmlFor="name"
+            className="block text-sm font-medium text-slate-300 mb-2"
+          >
             Name
           </label>
           <input
@@ -93,7 +110,10 @@ export default function ContactForm({ className = '' }: ContactFormProps) {
           />
         </div>
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-2">
+          <label
+            htmlFor="email"
+            className="block text-sm font-medium text-slate-300 mb-2"
+          >
             Email
           </label>
           <input
@@ -110,7 +130,10 @@ export default function ContactForm({ className = '' }: ContactFormProps) {
       </div>
 
       <div>
-        <label htmlFor="subject" className="block text-sm font-medium text-slate-300 mb-2">
+        <label
+          htmlFor="subject"
+          className="block text-sm font-medium text-slate-300 mb-2"
+        >
           Subject
         </label>
         <input
@@ -126,7 +149,10 @@ export default function ContactForm({ className = '' }: ContactFormProps) {
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-2">
+        <label
+          htmlFor="message"
+          className="block text-sm font-medium text-slate-300 mb-2"
+        >
           Message
         </label>
         <textarea
@@ -146,9 +172,9 @@ export default function ContactForm({ className = '' }: ContactFormProps) {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           className={`p-4 rounded-lg ${
-            status.type === 'success' 
-              ? 'bg-green-500/10 text-green-400 border border-green-500/20' 
-              : 'bg-red-500/10 text-red-400 border border-red-500/20'
+            status.type === "success"
+              ? "bg-green-500/10 text-green-400 border border-green-500/20"
+              : "bg-red-500/10 text-red-400 border border-red-500/20"
           }`}
         >
           {status.message}
