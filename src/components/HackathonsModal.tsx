@@ -71,42 +71,6 @@ export default function HackathonsModal({
 
                 <div className="bg-slate-800/30 rounded-xl p-6 backdrop-blur-sm border border-slate-700/50">
                   <div className="space-y-8">
-                    {/* SUST Open Courseware Project */}
-                    <div className="flex items-start space-x-4">
-                      <div className="p-2 bg-green-500/10 rounded-lg mt-1">
-                        <FaLaptopCode className="w-5 h-5 text-green-300/80" />
-                      </div>
-                      <div>
-                        <h4 className="text-lg font-semibold text-green-300/90 mb-3">
-                          SUST Open Courseware Project
-                        </h4>
-                        <ul className="list-none space-y-2">
-                          <li className="text-slate-300">
-                            Led the development team as Project Manager
-                          </li>
-                          <li className="text-slate-300">
-                            Implemented a comprehensive learning platform using
-                            MERN stack
-                          </li>
-                          <li className="text-slate-300">
-                            Designed system architecture including course
-                            management, quiz evaluation, and certificate
-                            issuance
-                          </li>
-                          <li className="text-slate-300">
-                            <a
-                              href="https://github.com/SUST-Open-Courseware/SUST-Open-CourseWare"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-1"
-                            >
-                              <FaGithub className="inline" /> View on GitHub
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-
                     {/* NSU Hackathon */}
                     <div className="flex items-start space-x-4">
                       <div className="p-2 bg-purple-500/10 rounded-lg mt-1">
