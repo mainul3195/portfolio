@@ -167,23 +167,28 @@ export default function FloatingContactButton() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          position: "relative",
         }}
       >
-        <motion.div
-          className={`flex items-center justify-center flex-shrink-0 ${
-            !isExpanded ? "absolute inset-0 m-auto" : ""
-          }`}
-          variants={iconVariants}
-          animate={controls}
-          initial="expanded"
+        <div
+          className="flex items-center justify-center"
           style={{
             position: !isExpanded ? "absolute" : "relative",
-            left: !isExpanded ? "50%" : "auto",
-            transform: !isExpanded ? "translateX(-50%)" : "none",
+            width: "100%",
+            height: "100%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
-          <HiMail className="w-5 h-5" />
-        </motion.div>
+          <HiMail
+            className={`${!isExpanded ? "w-6 h-6" : "w-5 h-5"}`}
+            style={{
+              marginRight: isExpanded ? "8px" : "0",
+              transition: "margin-right 0.4s ease",
+            }}
+          />
+        </div>
 
         {isExpanded && (
           <motion.span
