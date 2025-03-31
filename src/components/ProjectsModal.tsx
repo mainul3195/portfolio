@@ -1,23 +1,41 @@
-'use client';
+"use client";
 
-import { motion, AnimatePresence } from 'framer-motion';
-import { IoClose } from 'react-icons/io5';
-import { FaGithub, FaExternalLinkAlt, FaReact, FaNode, FaCode, FaJava, FaDesktop, 
-         FaHome, FaMobileAlt, FaServer, FaBrain, FaGamepad, FaCss3Alt, FaHtml5, FaKey } from 'react-icons/fa';
-import { SiMongodb, SiExpress, SiTypescript, SiMysql, SiEspressif } from 'react-icons/si';
-import { TbDatabase } from 'react-icons/tb';
-import { useEffect } from 'react';
-import { lockScroll, unlockScroll } from '@/utils/scrollLock';
+import { motion, AnimatePresence } from "framer-motion";
+import { IoClose } from "react-icons/io5";
+import {
+  FaGithub,
+  FaExternalLinkAlt,
+  FaReact,
+  FaNode,
+  FaCode,
+  FaJava,
+  FaDesktop,
+  FaHome,
+  FaMobileAlt,
+  FaServer,
+  FaBrain,
+  FaGamepad,
+  FaCss3Alt,
+  FaHtml5,
+  FaKey,
+} from "react-icons/fa";
+import {
+  SiMongodb,
+  SiExpress,
+  SiTypescript,
+  SiMysql,
+  SiEspressif,
+} from "react-icons/si";
+import { TbDatabase } from "react-icons/tb";
+import { useEffect } from "react";
+import { lockScroll, unlockScroll } from "@/utils/scrollLock";
 
 interface ProjectsModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
-export default function ProjectsModal({
-  isOpen,
-  onClose
-}: ProjectsModalProps) {
+export default function ProjectsModal({ isOpen, onClose }: ProjectsModalProps) {
   useEffect(() => {
     if (isOpen) {
       lockScroll();
@@ -31,61 +49,89 @@ export default function ProjectsModal({
 
   const projects = [
     {
-      title: "iShopNow",
-      description: "A user-friendly e-commerce website using MERN stack: MongoDB for database, Express for server-side framework, React for client-side framework, and Node.js for backend.",
+      title: "SUST Open Courseware",
+      description:
+        "Developed a comprehensive online learning platform for SUST using MERN stack. Serves as a centralized repository for course materials, includes features for course enrollment, chapter-wise learning, quizzes, and certificate issuance. Led the project as Project Manager.",
       tech: [
-        { name: 'MongoDB', icon: <SiMongodb className="text-green-500" /> },
-        { name: 'Express', icon: <SiExpress className="text-white" /> },
-        { name: 'React', icon: <FaReact className="text-cyan-400" /> },
-        { name: 'Node.js', icon: <FaNode className="text-green-500" /> },
-        { name: 'TypeScript', icon: <SiTypescript className="text-blue-400" /> }
+        { name: "MongoDB", icon: <SiMongodb className="text-green-500" /> },
+        { name: "Express", icon: <SiExpress className="text-white" /> },
+        { name: "React", icon: <FaReact className="text-cyan-400" /> },
+        { name: "Node.js", icon: <FaNode className="text-green-500" /> },
+        {
+          name: "TypeScript",
+          icon: <SiTypescript className="text-blue-400" />,
+        },
       ],
-      type: "Full Stack"
+      type: "Full Stack",
+      link: "https://github.com/SUST-Open-Courseware/SUST-Open-CourseWare",
+    },
+    {
+      title: "iShopNow",
+      description:
+        "A user-friendly e-commerce website using MERN stack: MongoDB for database, Express for server-side framework, React for client-side framework, and Node.js for backend.",
+      tech: [
+        { name: "MongoDB", icon: <SiMongodb className="text-green-500" /> },
+        { name: "Express", icon: <SiExpress className="text-white" /> },
+        { name: "React", icon: <FaReact className="text-cyan-400" /> },
+        { name: "Node.js", icon: <FaNode className="text-green-500" /> },
+        {
+          name: "TypeScript",
+          icon: <SiTypescript className="text-blue-400" />,
+        },
+      ],
+      type: "Full Stack",
     },
     {
       title: "Pigeonnier",
-      description: "An Email Client Software using JavaFX that gives all the facilities of the Gmail website as well as some extra features.",
+      description:
+        "An Email Client Software using JavaFX that gives all the facilities of the Gmail website as well as some extra features.",
       tech: [
-        { name: 'Java', icon: <FaJava className="text-red-500" /> },
-        { name: 'JavaFX', icon: <FaDesktop className="text-blue-400" /> },
-        { name: 'CSS', icon: <FaCss3Alt className="text-blue-500" /> },
-        { name: 'Persistence', icon: <TbDatabase className="text-yellow-400" /> },
-        { name: 'SHA256', icon: <FaKey className="text-green-400" /> }
+        { name: "Java", icon: <FaJava className="text-red-500" /> },
+        { name: "JavaFX", icon: <FaDesktop className="text-blue-400" /> },
+        { name: "CSS", icon: <FaCss3Alt className="text-blue-500" /> },
+        {
+          name: "Persistence",
+          icon: <TbDatabase className="text-yellow-400" />,
+        },
+        { name: "SHA256", icon: <FaKey className="text-green-400" /> },
       ],
-      type: "Desktop Application"
+      type: "Desktop Application",
     },
     {
       title: "IOT-Based Home Control System",
-      description: "Using the esp8266 microcontroller and the facilities of Blynk, we made a system to control all home appliances from any part of the world over the internet.",
+      description:
+        "Using the esp8266 microcontroller and the facilities of Blynk, we made a system to control all home appliances from any part of the world over the internet.",
       tech: [
-        { name: 'ESP8266', icon: <SiEspressif className="text-red-500" /> },
-        { name: 'Blynk', icon: <FaHome className="text-blue-400" /> },
-        { name: 'IoT', icon: <FaMobileAlt className="text-green-500" /> }
+        { name: "ESP8266", icon: <SiEspressif className="text-red-500" /> },
+        { name: "Blynk", icon: <FaHome className="text-blue-400" /> },
+        { name: "IoT", icon: <FaMobileAlt className="text-green-500" /> },
       ],
-      type: "IoT Project"
+      type: "IoT Project",
     },
     {
       title: "Online Course Management System",
-      description: "A web project using Servlet, JSP for the backend, SQL for managing the Database, and HTML, and CSS for the front end.",
+      description:
+        "A web project using Servlet, JSP for the backend, SQL for managing the Database, and HTML, and CSS for the front end.",
       tech: [
-        { name: 'Java', icon: <FaJava className="text-red-500" /> },
-        { name: 'HTML', icon: <FaHtml5 className="text-orange-500" /> },
-        { name: 'CSS', icon: <FaCss3Alt className="text-blue-500" /> },
-        { name: 'Servlet/JSP', icon: <FaServer className="text-gray-400" /> },
-        { name: 'MySQL', icon: <SiMysql className="text-blue-400" /> }
+        { name: "Java", icon: <FaJava className="text-red-500" /> },
+        { name: "HTML", icon: <FaHtml5 className="text-orange-500" /> },
+        { name: "CSS", icon: <FaCss3Alt className="text-blue-500" /> },
+        { name: "Servlet/JSP", icon: <FaServer className="text-gray-400" /> },
+        { name: "MySQL", icon: <SiMysql className="text-blue-400" /> },
       ],
-      type: "Web Application"
+      type: "Web Application",
     },
     {
       title: "Interactive Tic-Tac-Toe",
-      description: "A learning project for language C where a player can interactively play the game with a computer.",
+      description:
+        "A learning project for language C where a player can interactively play the game with a computer.",
       tech: [
-        { name: 'C', icon: <FaCode className="text-gray-400" /> },
-        { name: 'Algorithms', icon: <FaBrain className="text-purple-400" /> },
-        { name: 'Game Dev', icon: <FaGamepad className="text-green-400" /> }
+        { name: "C", icon: <FaCode className="text-gray-400" /> },
+        { name: "Algorithms", icon: <FaBrain className="text-purple-400" /> },
+        { name: "Game Dev", icon: <FaGamepad className="text-green-400" /> },
       ],
-      type: "Console Application"
-    }
+      type: "Console Application",
+    },
   ];
 
   return (
@@ -122,12 +168,20 @@ export default function ProjectsModal({
                         {project.type}
                       </span>
                     </div>
-                  
+
+                    {project.link && (
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-400 hover:text-blue-300 transition-colors"
+                      >
+                        <FaGithub size={20} />
+                      </a>
+                    )}
                   </div>
 
-                  <p className="text-slate-300 mb-4">
-                    {project.description}
-                  </p>
+                  <p className="text-slate-300 mb-4">{project.description}</p>
 
                   <div className="flex flex-wrap gap-3">
                     {project.tech.map((tech) => (
@@ -142,6 +196,32 @@ export default function ProjectsModal({
                   </div>
                 </div>
               ))}
+            </div>
+
+            <div className="mt-8">
+              <h3 className="text-2xl font-bold mb-4 text-slate-100">
+                Hackathon Participations
+              </h3>
+              <div className="backdrop-blur-lg bg-slate-800/50 border border-slate-700/50 rounded-xl p-6 mb-6">
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="text-lg font-semibold text-blue-300">
+                      North South University Hackathon
+                    </h4>
+                    <p className="text-slate-300 mt-1">
+                      Reached Top 10 in the competition
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-blue-300">
+                      Leading University Hackathon
+                    </h4>
+                    <p className="text-slate-300 mt-1">
+                      Participated and gained valuable development experience
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div className="mt-8 flex justify-center">

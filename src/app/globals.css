@@ -69,3 +69,20 @@ body {
     background: #64748b;
   }
 }
+
+/* Floating Animation for Contact Button */
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.floating-btn {
+  animation: floating 3s ease-in-out infinite;
+}

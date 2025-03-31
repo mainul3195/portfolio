@@ -6,4 +6,5 @@ export type ModalType =
   | 'president-scout'
   | 'research'
   | 'high-school'
-  | 'projects';
+  | 'projects'
+  | 'hackathons';
