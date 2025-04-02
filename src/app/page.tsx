@@ -16,6 +16,7 @@ import AchievementsSection from "@/components/AchievementsSection";
 import LeadershipSection from "@/components/LeadershipSection";
 import CompetitiveProgrammingSection from "@/components/CompetitiveProgrammingSection";
 import ProjectsSection from "@/components/ProjectsSection";
+import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 
 // Initialize EmailJS
 const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "";
@@ -90,6 +91,27 @@ export default function Home() {
       <CompetitiveProgrammingSection />
       <ProjectsSection />
       <LeadershipSection onOpenModal={handleModalOpen} />
+
+      {/* Background Beams with Collision */}
+      <div className="w-full -mx-6 mt-20">
+        <BackgroundBeamsWithCollision className="h-[35rem]">
+          <div className="text-center max-w-xl mx-auto px-4">
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+              Ready to Connect?
+            </h2>
+            <p className="text-lg md:text-xl text-white/80 mb-8">
+              Get in touch to discuss potential collaborations or just to say
+              hello!
+            </p>
+            <a
+              href="/contact"
+              className="px-8 py-3 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white font-medium transition-all"
+            >
+              Contact Me
+            </a>
+          </div>
+        </BackgroundBeamsWithCollision>
+      </div>
 
       {/* Modals */}
       <EducationModal
