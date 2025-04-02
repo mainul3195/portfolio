@@ -89,7 +89,9 @@ export const BackgroundBeamsWithCollision = ({
         ))}
       </div>
 
-      <div className="relative z-10">{children}</div>
+      <div className="relative z-10 w-full flex items-center justify-center">
+        {children}
+      </div>
       <div
         ref={containerRef}
         className="absolute bottom-0 bg-transparent w-full inset-x-0 pointer-events-none h-4"

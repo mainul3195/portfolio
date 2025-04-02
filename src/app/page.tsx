@@ -105,7 +105,7 @@ export default function Home() {
             </p>
             <a
               href="/contact"
-              className="px-8 py-3 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white font-medium transition-all"
+              className="inline-block px-8 py-3 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white font-medium transition-all"
             >
               Contact Me
             </a>
