@@ -83,23 +83,13 @@ export default function Home() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="container mx-auto px-6 overflow-hidden min-h-screen bg-gradient-to-b from-slate-900 to-slate-950 relative"
+      className="container mx-auto px-6 overflow-hidden min-h-screen relative"
     >
-      {/* Animated background effect */}
-      <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-800/20 via-slate-900/5 to-transparent pointer-events-none" />
-
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        className="relative"
-      >
-        <HeroSection />
-        <AchievementsSection onOpenModal={handleModalOpen} />
-        <CompetitiveProgrammingSection />
-        <ProjectsSection />
-        <LeadershipSection onOpenModal={handleModalOpen} />
-      </motion.div>
+      <HeroSection />
+      <AchievementsSection onOpenModal={handleModalOpen} />
+      <CompetitiveProgrammingSection />
+      <ProjectsSection />
+      <LeadershipSection onOpenModal={handleModalOpen} />
 
       {/* Modals */}
       <EducationModal
