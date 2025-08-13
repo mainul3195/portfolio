@@ -1,46 +1,52 @@
-'use client';
-import { motion } from 'framer-motion';
-import { FaFacebook, FaLinkedin, FaGithub } from 'react-icons/fa';
-import { HiMail } from 'react-icons/hi';
-import { SiCodeforces } from 'react-icons/si';
+"use client";
+import { motion } from "framer-motion";
+import { FaFacebook, FaLinkedin, FaGithub } from "react-icons/fa";
+import { HiMail } from "react-icons/hi";
+import { SiCodeforces } from "react-icons/si";
+import { Boxes } from "@/components/ui/background-boxes";
 
 const socialLinks = [
   {
-    name: 'Facebook',
-    url: 'https://www.facebook.com/mainu1.hasan',
+    name: "Facebook",
+    url: "https://www.facebook.com/mainu1.hasan",
     icon: FaFacebook,
-    hoverColor: 'hover:text-blue-500'
+    hoverColor: "hover:text-blue-500",
   },
   {
-    name: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/mainul-hasan-58289a212/',
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/mainul-hasan-58289a212/",
     icon: FaLinkedin,
-    hoverColor: 'hover:text-blue-600'
+    hoverColor: "hover:text-blue-600",
   },
   {
-    name: 'GitHub',
-    url: 'https://github.com/mainul3195',
+    name: "GitHub",
+    url: "https://github.com/mainul3195",
     icon: FaGithub,
-    hoverColor: 'hover:text-slate-400'
+    hoverColor: "hover:text-slate-400",
   },
   {
-    name: 'Codeforces',
-    url: 'https://codeforces.com/profile/ammelid',
+    name: "Codeforces",
+    url: "https://codeforces.com/profile/ammelid",
     icon: SiCodeforces,
-    hoverColor: 'hover:text-blue-500'
+    hoverColor: "hover:text-blue-500",
   },
   {
-    name: 'Email',
-    url: 'mailto:mainulhasan20000@gmail.com',
+    name: "Email",
+    url: "mailto:mainulhasan20000@gmail.com",
     icon: HiMail,
-    hoverColor: 'hover:text-red-400'
-  }
+    hoverColor: "hover:text-red-400",
+  },
 ];
 
 export default function Footer() {
   return (
-    <footer className="border-t border-slate-800 mt-20">
-      <div className="max-w-7xl mx-auto px-6 py-12">
+    <footer className="border-t border-slate-800 mt-20 relative overflow-hidden">
+      {/* Background Boxes */}
+      <div className="absolute inset-0 w-full h-full z-0 opacity-30">
+        <Boxes />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 py-12 relative z-10">
         <div className="flex flex-col items-center justify-center space-y-8">
           {/* Social Links */}
           <motion.p
@@ -69,14 +75,14 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div className="text-center">
-            <motion.h3 
+            <motion.h3
               className="text-slate-200 text-lg font-semibold mb-2"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
             >
               Contact
             </motion.h3>
-            <motion.div 
+            <motion.div
               className="text-slate-400 space-y-1"
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -88,7 +94,7 @@ export default function Footer() {
           </div>
 
           {/* Copyright */}
-          <motion.div 
+          <motion.div
             className="text-slate-500 text-sm"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
