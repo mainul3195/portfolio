@@ -6,12 +6,12 @@ export default function CompetitiveProgrammingSection() {
   return (
     <section id="competitiveprogramming" className="py-16">
       <div className="max-w-6xl mx-auto">
-        <motion.h2 
+        <motion.h2
           className="text-4xl md:text-5xl font-bold mb-12 text-slate-100"
         >
           Competitive Programming
         </motion.h2>
-        
+
         <div className="grid md:grid-cols-3 gap-8">
           {/* Overview */}
           <motion.div
@@ -78,7 +78,7 @@ export default function CompetitiveProgrammingSection() {
                 "2nd Runner Up at Sylhet Bondhushova Programming Contest hosted by Leading University",
                 "Officially 15th at ICPC Dhaka Regional 2023",
                 "11th in SEC Junior Programming Contest",
-                "21th in NCPC 2023"
+                "7th at DUET IUPC 2025"
               ].map((item, index) => (
                 <li key={index} className="flex items-center gap-2 text-gray-300">
                   <span className="w-1.5 h-1.5 rounded-full bg-orange-500 flex-shrink-0" />

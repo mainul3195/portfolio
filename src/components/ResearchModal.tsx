@@ -71,9 +71,9 @@ export default function ResearchModal({ isOpen, onClose }: ResearchModalProps) {
                   </div>
 
                   <div>
-                    <h4 className="text-lg font-semibold mb-2 text-cyan-300/90">Current Projects and Researches</h4>
+                    <h4 className="text-lg font-semibold mb-2 text-cyan-300/90">Research and ongoing papers</h4>
                     <ul className="list-disc list-inside text-slate-400 space-y-2">
-                      <li>Creating a dataset for Code-Mixed hate speech and evaluating the performance of a fine tuned model</li>
+                      <li>Creating a novel 500k dataset for Code-Mixed hate speech and evaluating the performance of a fine tuned model</li>
                       <li>Mortality Prediction from ECG imaging by Neural Temporal Point Process</li>
                     </ul>
                   </div>
