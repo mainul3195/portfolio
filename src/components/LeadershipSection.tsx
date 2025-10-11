@@ -28,7 +28,7 @@ export default function LeadershipSection({ onOpenModal }: LeadershipSectionProp
     {
       icon: <FaUserTie />,
       title: "Training Coordinator",
-      description: "Current Coordinator & Trainer of SUST Competitive Programming Training Camp",
+      description: "Former Coordinator & Trainer of SUST Competitive Programming Training Camp",
       color: "from-emerald-500/5 to-emerald-600/10",
       borderColor: "border-emerald-500/10",
       iconColor: "text-emerald-400"

@@ -13,10 +13,12 @@ interface LeadershipModalProps {
 const leadershipRoles = [
   "Former Senior Patrol Leader of Bindubashini Govt. Boys' High School Scout Group",
   "Competitive Programming mentor of SUST Competitive Programming Community",
-  "Current Coordinator & Trainer of SUST Competitive Programming Training Camp",
+  "Former Coordinator & Trainer of SUST Competitive Programming Training Camp",
   "Coordinator of IUPC volunteers for SUST CSE Carnival 2024",
+  "Problem Setter & Coordinator for National High School Programming Contest 2025",
+  "Coordinator of Regional Programming Contest Sylhet, 2025",
   "Former Assistant Organizing Secretary of Tangail Students' Association, SUST",
-  "Competitive Programming Trainer at Sylhet International University"
+  "Competitive Programming Trainer at Sylhet International University",
 ];
 
 export default function LeadershipModal({ isOpen, onClose }: LeadershipModalProps) {
