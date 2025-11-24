@@ -31,7 +31,7 @@ export const experienceData = [
                 items: [
                     "Developing an automation system for link collection.",
                     "Exploration of ML, AI, Docker and other technologies that are shaping our future.",
-                    "Exploring different Design Pattern to improve the base of Software Engineering."
+                    "Exploring different Design Patterns to improve the base of Software Engineering."
                 ],
             },
         ],
