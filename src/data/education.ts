@@ -14,11 +14,11 @@ export const education: Education[] = [
   {
     degree: "B.Sc. in Computer Science & Engineering",
     institution: "Shahjalal University of Science and Technology, Sylhet",
-    duration: "2019 – Present",
+    duration: "2019-2025",
     location: "Sylhet, Bangladesh",
     icon: FaUserGraduate,
     achievements: [
-      "CGPA: Above 3.95 (Up to 6th Semester)"
+      "CGPA: 3.97"
     ]
   },
   {
